@@ -2,6 +2,7 @@ package com.example.androidmastery.ui.main.view
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.View
 import androidx.navigation.findNavController
 import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.setupActionBarWithNavController
@@ -14,6 +15,7 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+        setupViews()
     }
 
 
@@ -35,7 +37,15 @@ class MainActivity : AppCompatActivity() {
                 R.id.profileFragment
             )
         )
-
         setupActionBarWithNavController(navController, appBarConfiguration)
+    }
+
+
+    fun showBottomNavigation() {
+        bottomNavView.visibility = View.VISIBLE
+    }
+
+    fun hideBottomNavigation() {
+        bottomNavView.visibility = View.GONE
     }
 }

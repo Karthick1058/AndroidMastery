@@ -9,7 +9,11 @@
         android:id="@+id/homeFragment"
         android:name="com.example.androidmastery.ui.main.view.fragments.HomeFragment"
         android:label="fragment_home"
-        tools:layout="@layout/fragment_home" />
+        tools:layout="@layout/fragment_home">
+        <action
+            android:id="@+id/action_homeFragment_to_themesFragment"
+            app:destination="@id/themesFragment" />
+    </fragment>
     <fragment
         android:id="@+id/browseFragment"
         android:name="com.example.androidmastery.ui.main.view.fragments.BrowseFragment"
@@ -24,10 +28,40 @@
         android:id="@+id/notificationFragment"
         android:name="com.example.androidmastery.ui.main.view.fragments.NotificationFragment"
         android:label="fragment_notification"
-        tools:layout="@layout/fragment_notification" />
+        tools:layout="@layout/fragment_notification">
+        <action
+            android:id="@+id/action_notificationFragment_to_notificationDetailsFragment"
+            app:destination="@id/notificationDetailsFragment" />
+    </fragment>
     <fragment
         android:id="@+id/profileFragment"
         android:name="com.example.androidmastery.ui.main.view.fragments.ProfileFragment"
         android:label="fragment_profile"
         tools:layout="@layout/fragment_profile" />
+    <fragment
+        android:id="@+id/notificationDetailsFragment"
+        android:name="com.example.androidmastery.ui.main.view.fragments.NotificationDetailsFragment"
+        android:label="fragment_notification_details"
+        tools:layout="@layout/fragment_notification_details" />
+    <fragment
+        android:id="@+id/themesFragment"
+        android:name="com.example.androidmastery.ui.main.view.fragments.ThemesFragment"
+        android:label="fragment_themes"
+        tools:layout="@layout/fragment_themes">
+        <action
+            android:id="@+id/action_themesFragment_to_setsFragment"
+            app:destination="@id/setsFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/setsFragment"
+        android:name="com.example.androidmastery.ui.main.view.fragments.SetsFragment"
+        android:label="fragment_sets"
+        tools:layout="@layout/fragment_sets">
+        <argument
+            android:name="id"
+            app:argType="integer" />
+        <argument
+            android:name="name"
+            app:argType="string" />
+    </fragment>
 </navigation>
